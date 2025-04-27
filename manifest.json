@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Wheel Modifier",
+  "version": "1.0",
+  "description": "Modify wheel of names results",
+  "permissions": ["activeTab", "storage", "scripting"],
+  "host_permissions": ["https://wheelofnames.com/*"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "content_scripts": [{
+    "matches": ["https://wheelofnames.com/*"],
+    "js": ["content.js"]
+  }],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}

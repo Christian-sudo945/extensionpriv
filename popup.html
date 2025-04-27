@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>Wheel Control</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .input-row {
+            display: flex;
+            gap: 5px;
+        }
+        input, select, button {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        input {
+            flex: 1;
+        }
+        select {
+            width: 100%;
+        }
+        button {
+            background: #1a73e8;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: #1557b0;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        #toggleBtn {
+            padding: 8px 15px;
+        }
+        #toggleBtn.active {
+            background: #34a853;
+        }
+        .status {
+            padding: 8px;
+            border-radius: 4px;
+            text-align: center;
+            font-size: 14px;
+            background: #f1f3f4;
+        }
+        .status.active {
+            background: #e6f4ea;
+            color: #1e8e3e;
+        }
+        .loading {
+            color: #666;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h2 style="margin: 0;">Wheel Control</h2>
+            <button id="toggleBtn">Enable</button>
+        </div>
+        <div class="input-row">
+            <input type="text" id="customName" placeholder="Add custom name">
+            <button id="addBtn">Add</button>
+        </div>
+        <select id="winnerSelect">
+            <option value="">Loading names...</option>
+        </select>
+        <button id="setWinner">Set Winner</button>
+        <div id="status" class="status">Not connected</div>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
